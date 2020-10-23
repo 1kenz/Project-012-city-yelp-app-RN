@@ -1,3 +1,3 @@
-export * from "./Timeline";
-export * from "./Post";
-export * from "./Friends";
+export * from './RestaurantDetail';
+export * from './Restaurant';
+export * from './Home';
