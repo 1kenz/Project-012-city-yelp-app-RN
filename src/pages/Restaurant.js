@@ -9,26 +9,24 @@ import {
   Dimensions,
   TouchableWithoutFeedback,
 } from 'react-native';
-import PostCard from '../component/RestorantCard';
+import RestaurantCard from '../component/RestorantCard';
 
-const Restaurant = (props) => {
-  const selectedRestaurant = props.route.params.selectedRestaurant;
+const Restaurant = ({route, navigation}) => {
+  const {selectedRestaurant} = route.params;
 
   return (
     <SafeAreaView>
       <TouchableWithoutFeedback
-        onPress={() =>
-          props.navigation.navigate('ThirdPage', {restaurantDetail: item})
-        }>
+        onPress={() => navigation.navigate('ThirdPage')}>
         <View>
           <Image
-            source={{uri: selectedRestaurant.img}}
+            source={{uri: selectedRestaurant.photograph}}
             style={{
-              height: Dimensions.get('window').height / 2,
+              height: Dimensions.get('window').height / 3,
             }}
           />
           <Text style={{margin: 10, fontSize: 20, fontWeight: 'bold'}}>
-            {postData.userName}
+            {selectedRestaurant.name}
           </Text>
         </View>
       </TouchableWithoutFeedback>
